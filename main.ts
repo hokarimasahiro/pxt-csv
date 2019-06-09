@@ -17,8 +17,9 @@ namespace CSV {
     //% weight=100 blockGap=8
     export function getString(csv: string, n: number): string {
         let i1=0
-        let i2=csv.indexOf(",")
-        for(let i=0;i<n;i++,i1=i2){
+        let i2=-1
+        for(let i=0;i<n;i++){
+            i1=i2+1
             i2=csv.indexOf(",",i1)
             if ((i2==-1) && i <(n-1)) return ""
         }
