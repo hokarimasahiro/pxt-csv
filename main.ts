@@ -18,10 +18,10 @@ namespace CSV {
     export function getString(csv: string, n: number): string {
         let i1=0
         let i2=-1
-        for(let i=0;i<n;i++){
+        for(let i=0;i<=n;i++){
             i1=i2+1
             i2=csv.indexOf(",",i1)
-            if ((i2==-1) && i <(n-1)) return ""
+            if ((i2==-1) && i <n) return ""
         }
         if(i2==-1) i2=csv.length
         return csv.substr(i1,i2-i1)
