@@ -34,8 +34,9 @@ namespace CSV {
     //% weight=98 blockGap=8
     export function toNumber(s: string): number {
         let a = 0
-        let b = a.toString()
-        return 0
+        for(let i=0;i<s.length;i++)
+        a=a*10 + s.charCodeAt(i)-0x30
+        return a
     }
     /**
      * get value in a csv data
