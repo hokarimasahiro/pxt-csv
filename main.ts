@@ -36,7 +36,7 @@ namespace CSV {
         let a = 0
         for(let i=0;i<s.length;i++)
         a=a*10 + s.charCodeAt(i)-0x30
-        return a
+        return s.length
     }
     /**
      * get value in a csv data
@@ -46,7 +46,7 @@ namespace CSV {
     //% blockId="GetValue" block="Get value in %csv at %n"
     //% weight=96 blockGap=8
     export function getValue(csv: string, n: number): number {
-        return n//toNumber(getString(csv,n))
+        return toNumber(getString(csv,n))
     }
 
 }
