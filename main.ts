@@ -46,7 +46,7 @@ namespace CSV {
     //% blockId="GetValue" block="Get value in %csv at %n"
     //% weight=96 blockGap=8
     export function getValue(csv: string, n: number): number {
-        return toNumber(getString(csv,n))
+        return n//toNumber(getString(csv,n))
     }
 
 }
