@@ -34,9 +34,12 @@ namespace CSV {
     //% weight=98 blockGap=8
     export function toNumber(s: string): number {
         let a = 0
-        for (let i = 0; i < s.length; i++)
-            a = a * 10 + s.charCodeAt(i) - 0x30
-        return a
+        let minus = 1
+        for (let i = 0; i < s.length; i++) {
+            if (s.charAt(i) == "-") minus = -1
+            if ("0123456789".indexOf(s.charAt(i)) != -1) a = a * 10 + "0123456789".indexOf(s.charAt(i))
+        }
+        return a * minus
     }
     /**
      * get value in a csv data
