@@ -16,15 +16,15 @@ namespace CSV {
     //% blockId="GetString" block="Get String in %csv at %n"
     //% weight=100 blockGap=8
     export function getString(csv: string, n: number): string {
-        let i1=0
-        let i2=-1
-        for(let i=0;i<=n;i++){
-            i1=i2+1
-            i2=csv.indexOf(",",i1)
-            if ((i2==-1) && i <n) return ""
+        let i2 = -1
+        let wcsv = csv
+        for (let i = 0; i <= n; i++) {
+            wcsv = wcsv.substr(i2 + 1)
+            i2 = wcsv.indexOf(",")
+            if ((i2 == -1) && i < n) return ""
         }
-        if(i2==-1) i2=csv.length
-        return csv.substr(i1,i2-i1)
+        if (i2 == -1) i2 = wcsv.length
+        return wcsv.substr(0, i2)
     }
     /**
      * string to value
@@ -34,8 +34,8 @@ namespace CSV {
     //% weight=98 blockGap=8
     export function toNumber(s: string): number {
         let a = 0
-        for(let i=0;i<s.length;i++)
-        a=a*10 + s.charCodeAt(i)-0x30
+        for (let i = 0; i < s.length; i++)
+            a = a * 10 + s.charCodeAt(i) - 0x30
         return s.length
     }
     /**
@@ -46,7 +46,7 @@ namespace CSV {
     //% blockId="GetValue" block="Get value in %csv at %n"
     //% weight=96 blockGap=8
     export function getValue(csv: string, n: number): number {
-        return toNumber(getString(csv,n))
+        return toNumber(getString(csv, n))
     }
 
 }
