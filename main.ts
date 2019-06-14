@@ -19,7 +19,7 @@ namespace CSV {
         let i2 = -1
         let wcsv = csv
         for (let i = 0; i <= n; i++) {
-            wcsv = wcsv.substr(i2 + 1)
+            wcsv = wcsv.substr(i2 + 1,wcsv.length - i2)
             i2 = wcsv.indexOf(",")
             if ((i2 == -1) && i < n) return ""
         }
@@ -36,7 +36,7 @@ namespace CSV {
         let a = 0
         for (let i = 0; i < s.length; i++)
             a = a * 10 + s.charCodeAt(i) - 0x30
-        return s.length
+        return a
     }
     /**
      * get value in a csv data
