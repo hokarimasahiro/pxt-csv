@@ -8,12 +8,12 @@
 //% weight=100 color=#303030 icon="\u2712" block="CSV"
 namespace CSV {
 
-    //% shim=CSV::i2cRead
-    function i2cRead(n: number): number {
+    //% shim=CSV::testI2c
+    function testI2c(n: number): number {
         return 0;
     }
-    export function testI2cRead(ad:number):number{
-        return i2cRead(ad)
+    export function testI2cRead(ad: number): number {
+        return testI2c(ad)
     }
     /**
      * get string in a csv data
@@ -26,7 +26,7 @@ namespace CSV {
         let i2 = -1
         let wcsv = csv
         for (let i = 0; i <= n; i++) {
-            wcsv = wcsv.substr(i2 + 1,wcsv.length - i2)
+            wcsv = wcsv.substr(i2 + 1, wcsv.length - i2)
             i2 = wcsv.indexOf(",")
             if ((i2 == -1) && i < n) return ""
         }
