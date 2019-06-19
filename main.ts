@@ -8,7 +8,7 @@
 //% weight=100 color=#303030 icon="\u2712" block="CSV"
 namespace CSV {
 
-    //% shim=CSV::testI2c
+    //% shim=kana::testI2c
     function testI2c(n: number): number {
         return 0;
     }
