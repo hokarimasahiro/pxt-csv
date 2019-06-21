@@ -7,14 +7,6 @@
  */
 //% weight=100 color=#303030 icon="\u2712" block="CSV"
 namespace CSV {
-
-    //% shim=CSV::testI2c
-    function testI2c(n: number): number {
-        return 0;
-    }
-    export function testI2cRead(ad: number): number {
-        return testI2c(ad)
-    }
     /**
      * get string in a csv data
      * @param csv data, eg: "123,4,324"
