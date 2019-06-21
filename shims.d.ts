@@ -1,2 +1,2 @@
-declare namespace kana {
+declare namespace CSV {
 }
