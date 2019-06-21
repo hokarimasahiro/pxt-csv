@@ -8,9 +8,9 @@
     },
     "files": [
         "README.md",
-        "shims.d.ts",
         "main.ts",
-        "kana.cpp"
+        "shims.d.ts",
+        "CSV.cpp"
     ],
     "testFiles": [
         "test.ts"
